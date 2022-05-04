@@ -1,11 +1,10 @@
-#找出留言長度小於100
+#找出留言有good。
 data = []
 with open('reviews.txt','r') as reviews:
-	for review in reviews:  #for字串in清單
-		data.append(review) #把字串丟入data清單
-small100 =[]
+	for review in reviews:  
+		data.append(review)
+good = []
 for d in data:
-	if len(d)<100: #篩選字串長度小於100的字串
-		small100.append(d) #長度小於100的存入small100清單
-print(len(small100))
-
+	if 'good' in d:
+		good.append(d)
+print(len(good))
